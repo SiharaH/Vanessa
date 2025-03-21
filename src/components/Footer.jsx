@@ -1,8 +1,6 @@
 import React from 'react'
 import { assets } from '../assets/assets'
 import NewsLetter from './NewsLetter'
-import Home from '../pages/Home'
-import Collection from '../pages/Collection'
 
 const Footer = () => {
     const Year = new Date().getFullYear();
@@ -12,7 +10,7 @@ const Footer = () => {
         {/* Logo and Description */}
         <div className='border-r-2 p-5'>
           <img src={assets.logo} className='m-5 w-32 ' alt='Company Logo' />
-          <p className='text-gray-700 leading-relaxed pr-10'>
+          <p className='text-gray-600 leading-relaxed pr-10'>
           Vanessa offers stylish, high-quality women's clothing that empowers and inspires confidence. Discover fashion made for you.
           </p> <br />
             <div className='flex items-center space-x-5'>
@@ -26,7 +24,7 @@ const Footer = () => {
 
         {/* Company Links */}
         <div className='border-r-2 pr-5'>
-          <h2 className='text-xl font-semibold mb-5 text-black '>COMPANY</h2>
+          <h2 className='text-lg font-semibold mb-5 text-black '>COMPANY</h2>
           <ul className='flex flex-col gap-1 text-gray-600 cursor-pointer'> 
             <li className='hover:text-pink-600'>Home</li>
             <li className='hover:text-pink-600'>FAQs</li>

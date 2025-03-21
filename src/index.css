@@ -6,3 +6,10 @@
 a.active hr{
     display:block;
 }
+
+@media (max-width:640px) {
+    a.active{
+        background-color: #fb70e2;
+        color: white
+    }
+}
