@@ -10,7 +10,7 @@ const NewsLetter = () => {
     <div>
         <div className='text-center p-5'>
             <h1 className='text-xl font-semibold'>Subscribe to our Newsletter ♥</h1>
-            <p className='text-gray-500 mt-2'>Get the latest news and updates from us</p>
+            {/* <p className='text-gray-500 mt-2'>Get the latest news and updates from us</p> */}
             <form onSubmit={handleSubmit} className='w-full sm:w-1/2 mx-auto flex items-center my-6 border pl-3'>
                 <input className='w-full sm:flex-1 outline-none pl-3 text-xs' type="email" placeholder='Enter Your Email' required />
                 <button type="submit" className='bg-black text-white text-xs px-2 py-1'>SUBSCRIBE</button>
