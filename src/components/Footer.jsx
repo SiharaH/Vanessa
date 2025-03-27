@@ -5,7 +5,7 @@ import NewsLetter from './NewsLetter'
 const Footer = () => {
     const Year = new Date().getFullYear();
   return (
-    <footer className='bg-gray-50 py-10 mt-40'>
+    <footer className='bg-gray-50 py-10 mt-10'>
       <div className='container mx-auto grid grid-cols-1 sm:grid-cols-[2fr_1fr_2fr] gap-5 px-5 font-semibold'>
         {/* Logo and Description */}
         <div className='border-r-2 p-5'>
