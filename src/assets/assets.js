@@ -71,6 +71,11 @@ import footerE from './footerE.png'
 import footerlk from './footerlk.png'
 import fbLogo from './fbLogo.png'
 import instaLogo from './instaLogo.png'
+import banner01 from './banner01.png'
+import banner02 from './banner02.png'
+import banner03 from './banner03.png'
+import banner04 from './banner04.png'
+
 
 
 
@@ -90,6 +95,10 @@ export const assets = {
     footerlk,
     fbLogo,
     instaLogo,
+    banner01,
+    banner02,
+    banner03,
+    banner04,
 
 
 }
