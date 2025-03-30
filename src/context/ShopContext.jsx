@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useState, useEffect } from "react";
 import { products } from "../assets/assets";
 
 export const ShopContext = createContext();
@@ -7,9 +7,17 @@ const ShopContextProvider = (props) => {
 
     const currency = 'LKR';
     const deliveryFee = 350;
+    const [search,setSearch] = useState('');
+    const [showSearch, setshowSearch] = useState(true);
+    const [cartitems, setCartItems] = useState({});
+
+    const addToCart = async (productId, size) => {
+         let cartData = structuredClone(cartitems);
+    }
 
     const value = {
         products , currency, deliveryFee,
+        search, setSearch, showSearch, setshowSearch
 
     }
 
