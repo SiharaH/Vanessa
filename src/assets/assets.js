@@ -75,6 +75,8 @@ import banner01 from './banner01.png'
 import banner02 from './banner02.png'
 import banner03 from './banner03.png'
 import banner04 from './banner04.png'
+import star_icon from './star_icon.png'
+import star_dull_icon from './star_dull_icon.png'
 
 
 
@@ -99,6 +101,8 @@ export const assets = {
     banner02,
     banner03,
     banner04,
+    star_icon,
+    star_dull_icon,
 
 
 }
