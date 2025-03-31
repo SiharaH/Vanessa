@@ -7,7 +7,7 @@ export const ShopContext = createContext();
 
 const ShopContextProvider = (props) => {
 
-    const currency = 'LKR';
+    const currency = 'LKR ';
     const deliveryFee = 350;
     const [search,setSearch] = useState('');
     const [showSearch, setshowSearch] = useState(true);
@@ -50,14 +50,37 @@ const ShopContextProvider = (props) => {
         return totalCount;
     }
 
-    const updatequantity = async (itemId, size, quantity) =>{
+    const updateQuantity = async (itemId, size, quantity) =>{
+        let cartData = structuredClone(cartItems);
+        cartData[itemId][size] = quantity;
+        setCartItems(cartData);
+    }
 
+    const getCartAmount = () => {
+        let totalAmount = 0;
+        for(const items in cartItems){
+            let itemInfo = products.find((products)=>products._id === items);
+            for(const item in cartItems[items]){
+                try {
+                    if (cartItems[items][item]){
+                        totalAmount +=itemInfo.price * cartItems[items][item];
+                        
+                    }
+                    
+                } catch (error) {
+                    
+                }
+            }
+        }
+        return totalAmount;
     }
 
     const value = {
         products , currency, deliveryFee,
         search, setSearch, showSearch, setshowSearch,
-        cartItems, setCartItems, addToCart, getCartCount,
+        cartItems, setCartItems, addToCart,
+        getCartCount, updateQuantity,
+        getCartAmount,
 
     }
 
