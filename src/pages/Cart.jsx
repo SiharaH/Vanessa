@@ -6,7 +6,7 @@ import CartTotal from '../components/CartTotal';
 
 const Cart = () => {
 
-  const {products, cartItems, currency, updateQuantity } = useContext(ShopContext);
+  const {products, cartItems, currency, updateQuantity, navigate } = useContext(ShopContext);
   const [cartData, setcartData] = useState([]);
 
   useEffect(() => {
@@ -60,6 +60,9 @@ const Cart = () => {
       <div className='flex justify-end my-20'>
         <div className='w-full sm:w-[450px]'>
           <CartTotal/>
+          <div className='w-full text-end'>
+            <button onClick={()=> navigate('/placeOrder')} className='py-3 px-8 my-8 bg-black text-white hover:bg-pink-500 font-medium text-sm'>PROCEED TO CHECKOUT</button>
+          </div>
         </div>
       </div>
       
