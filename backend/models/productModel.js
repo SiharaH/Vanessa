@@ -9,9 +9,9 @@ const productSchema = new mongoose.Schema({
     subCategory: {type:String, required:true},
     sizes: {type:Array, required:true},
     bestsellers: {type:Boolean},
-    date: {type:Date, default:Date.now}, // date not same as GS    
+    date: {type:Number, required:true},
 })
 
-const productModel =  mongoose.model('product',productSchema);
+const productModel = mongoose.models.product || mongoose.model('product',productSchema);
 
 export default productModel;
