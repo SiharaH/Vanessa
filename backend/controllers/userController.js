@@ -1,6 +1,14 @@
 import userModel from "../models/userModels"
 import validator from "validator"
 import bcrypt from "bcrypt"
+import jwt from "jsonwebtoken"
+
+
+const createToken = (id) =>{
+    return jwt.sign({id}, process.env.JWT_SECRET, {
+        expiresIn: '3d'
+    })
+}
 
 
 //Route for user login
