@@ -1,4 +1,4 @@
-import React, {use, useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import NavBar from './components/NavBar'
 import SideBar from './components/SideBar'
 import { Route, Routes } from 'react-router-dom'
@@ -18,7 +18,7 @@ const App = () => {
   useEffect(() => {
     localStorage.setItem('token', token)
   },[token])
-  
+
   return (
     <div className='bg-gray-50 min-h-screen'> 
     <ToastContainer />
