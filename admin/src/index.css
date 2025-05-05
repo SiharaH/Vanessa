@@ -3,6 +3,12 @@
 @tailwind components;
 @tailwind utilities;
 
+select, input, textarea {
+    border: 1px solid #f9e0f0;
+    outline-color: #fa9ecc;
+    border-radius: 4px;
+}
+
 .active{
     background-color: #ffebf5;
     border-color: #d17ca7;
