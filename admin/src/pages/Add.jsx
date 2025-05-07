@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { assets } from '../assets/assets'
+import axios from 'axios'
+import { backendURL } from '../App'
 
 const Add = () => {
 
@@ -15,10 +17,41 @@ const Add = () => {
   const [price, setPrice] = useState('')
   const [sizes, setSizes] = useState([])
   const [bestseller, setBestseller] = useState(false) 
+
+  const onSubmitHandler = async (e) => {
+    e.preventDefault();
+    try {
+      const formData = new FormData()
+
+      formData.append('name', name)
+      formData.append('description', description)
+      formData.append('price', price)
+      formData.append('category', category)
+      formData.append('subCategory', subCategory)
+      formData.append('sizes', JSON.stringify(sizes))
+      formData.append('bestsellers', bestseller)
+      formData.append('date', Date.now())
+      
+      image1 && formData.append('image1', image1)
+      image2 && formData.append('image2', image2)
+      image3 && formData.append('image3', image3)
+      image4 && formData.append('image4', image4)
+
+      const response = await axios.post(backendURL + "/api/product/add", formData)
+
+      console.log(response.data)
+
+    
+    } catch (error) {
+      
+    }
+    
+
+  }
   
   return (
     <div>
-      <form className='flex flex-col w-full items-start gap-3'>
+      <form onSubmit={onSubmitHandler} className='flex flex-col w-full items-start gap-3'>
         <div>
           <p className='mb-2'>Product Image</p>
           <div className='flex gap-2 mb-2'>
@@ -99,7 +132,7 @@ const Add = () => {
             </div>
           </div>
       <div className='flex gap-2 mt-2'>
-        <input type="checkbox" id="bestseller" />
+        <input onChange={()=> setBestseller(prev => !prev)} checked={bestseller} type="checkbox" id="bestseller" />
         <label className='cursor-pointer' htmlFor="bestseller">Add to Best Seller</label>
       </div>
 
